@@ -41,7 +41,7 @@ class TypeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id): JsonResponse
     {
         $type = Type::find($id);
         $data = [
@@ -55,7 +55,7 @@ class TypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): JsonResponse
     {
         $type = Type::where('id', $id)
             ->update(['description' => $request->input('description')]);
